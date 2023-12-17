@@ -1,0 +1,1 @@
+Here, you can find solutions to problems from Codeforces. If you have any questions about my solutions that you do not understand, or if you have a better solution for a problem, please do not hesitate to reach out. I love helping people and enjoy having my ideas challenged or explaining why I approached a problem in a particular way.
