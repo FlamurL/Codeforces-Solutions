@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define fr(i,n) for(int i=1;i<n;i++)
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+  int n;
+  cin>>n;
+  string a;
+  cin>>a;
+  
+  
+  int longest=1;
+  int cnt=1;
+ 
+  fr(i,n){
+        bool is=false;
+      if(a[i]!=a[i-1]){
+longest=max(longest,cnt);
+cnt=1;
+is=true;
+      }
+      
+  else
+  cnt++;
+  if(i==n-1&&is==false){
+      longest=max(longest,cnt);
+  }
+  }
+  cout<<longest+1<<endl;
+  
+  
+    }
+  
+}
