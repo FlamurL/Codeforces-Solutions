@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n,a,b;
+        cin>>n>>a>>b;
+        if(b>2*a){
+            int sol=a*n;
+            cout<<sol<<endl;
+        }
+        else{
+            int gjithsej=n/2;
+            int mbetja=n%2;
+            int sol=gjithsej*b+mbetja*a;
+            cout<<sol<<endl;
+        }
+    }
+}
