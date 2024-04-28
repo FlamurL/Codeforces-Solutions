@@ -1,0 +1,80 @@
+#include <bits/stdc++.h>
+#define ll long long int 
+#define fr(i,a) for(int i=0;i<a;i++)
+
+
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+ ll a,b,l;
+ cin>>a>>b>>l;
+vector<int>k;
+
+for(int i=1;i<=sqrt(l);i++){
+    if(l%i==0){
+
+        if(l/i==i)
+        k.push_back(i);
+ else{
+k.push_back(i);
+k.push_back(l/i);
+    }
+    }
+    
+   
+    
+}
+
+
+int sum=0;
+int a1=a;
+int cntX=1;
+while(sum<=l){
+    cntX++;
+a=a*a1;
+if(l%a!=0){
+    cntX--;
+    break;
+}
+sum=a;
+}
+sum=0;
+int b1=b;
+int cntY=1;
+while(sum<=l){
+    cntY++;
+b=b*b1;
+if(l%b!=0){
+    cntY--;
+    break;
+}
+sum=b;
+
+}
+int sol=0;
+
+for(int i=0;i<k.size();i++){
+bool is=false;
+    for(int j=0;j<=cntX;j++){
+            int powOfA=pow(a1,j);
+        for(int u=0;u<=cntY;u++){
+        
+            int powOfB=pow(b1,u);
+          ll s=k[i]*powOfA*powOfB;
+            if(s==l){ 
+            sol++;
+is=true;
+break;
+            }
+        }
+        if(is==true){
+            break;
+        }
+    }
+}
+cout<<sol<<endl;
+
+    }
+}
