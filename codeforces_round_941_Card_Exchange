@@ -1,0 +1,67 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+        int a[n];
+        vector<int> v;
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+        sort(a, a + n);
+        int cnt = 1;
+        for (int i = 1; i < n; i++) {
+            if (a[i - 1] != a[i]) {
+                v.push_back(cnt);
+                cnt = 1;
+            } else
+                cnt++;
+        }
+        v.push_back(cnt);
+     
+        sort(v.begin(), v.end(), greater<int>());
+        int siz = v.size();
+
+        int tot = n;
+        if(siz>1){ 
+       
+        for (int i = 0; i < siz-1; i++) {
+            if (v[i] >= k) {
+                if(i!=0){ 
+                v[i + 1] += k-1;
+                tot -=v[i]-(k - 1);
+                }
+                else{
+                    if(v[i]>=k){
+                   tot=k-1;
+                    }
+                    else{
+                        tot=v[i];
+                    }
+                    break;
+                }
+            } else {
+               
+                break;
+            }
+        }
+        }
+        else{
+            
+            if(v[0]>=k){
+           tot=k-1;
+            }
+            else{
+                        
+                tot=v[0];
+            }
+        }
+        cout << tot << endl;
+    }
+    return 0;
+}
