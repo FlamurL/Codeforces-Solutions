@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+  ll n,k;
+  cin>>n>>k;
+  ll a[n];
+  fr(i,n){
+      cin>>a[i];
+  }
+sort(a,a+n);
+int sol=0;
+int track=0;
+if(n==1){
+    cout<<"0"<<endl;
+}
+else{ 
+for(int i=1;i<n;i++){
+    track++;
+if(a[i]-a[i-1]>k||i==n-1){
+if(i==n-1&&a[i]-a[i-1]<=k){
+    track++;
+}
+sol=max(track,sol);
+track=0;
+ 
+ 
+}
+}
+cout<<n-sol<<endl;;
+}
+    }
+  
+}
