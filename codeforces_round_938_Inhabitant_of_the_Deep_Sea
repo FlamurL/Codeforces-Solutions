@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+int main() {
+int t;
+cin>>t;
+while(t--){
+    long long int n,k;
+    cin>>n>>k;
+    ll sum=0;
+    ll a[n];
+    ll sol=0;
+    for(ll i=0;i<n;i++){
+        cin>>a[i];
+        sum+=a[i];
+    }
+    if(sum<=k){
+        cout<<n;
+    }
+
+    else{
+        ll low=0;
+        ll high=n-1;
+        while(k>0){
+            if(a[high]>=a[low]){
+                if(2*a[low]-1<=k){
+                    sol++;
+                    k=k-2*a[low]+1;
+                    k--;
+                    a[high]=a[high]-a[low];
+                    low++;
+                    if(a[high]==0&&k==0){
+                        high--;
+                        sol++;
+                    }
+
+                }
+                else break;
+            }
+                 if(a[high]<a[low]){
+                if(2*a[high]<=k){
+                    sol++;
+                    k=k-2*a[high]+1;
+                    k--;
+                    a[low]=a[low]-a[high];
+                    high--;
+
+                }
+                else break;
+            }
+        }
+        cout<<sol;
+
+    }
+    cout<<endl;
+
+}
+}
