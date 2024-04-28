@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+   ll a,b,n;
+   cin>>a>>b>>n;
+   ll x[n];
+   fr(i,n){
+       cin>>x[i];
+   }
+   ll res=b-1;
+   sort(x,x+n);
+   ll sum=min(x[0]+1,a);
+   sum--;
+ 
+   for(int i=1;i<n;i++){
+    
+if(sum+x[i]+1<=a){
+    sum=sum+x[i];
+}
+else{
+res+=sum;
+ 
+if(x[i]+1>a){
+sum=a-1;
+}
+else{
+    sum=x[i];
+}
+}
+ 
+       
+       
+   }
+ 
+   cout<<res+sum+1<<endl;
+    }
+  
+}
