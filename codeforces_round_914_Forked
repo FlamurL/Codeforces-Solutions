@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b,xk,yk,xq,yq;
+        cin>>a>>b>>xk>>yk>>xq>>yq;
+     set<pair<int,int>>s;
+     if(a!=b){ 
+     s.insert({xk-a,yk-b});
+     s.insert({xk-a,yk+b});
+     s.insert({xk+a,yk+b});
+     s.insert({xk+a,yk-b});
+ 
+     s.insert({xk-b,yk-a});
+     s.insert({xk-b,yk+a});
+     s.insert({xk+b,yk+a});
+     s.insert({xk+b,yk-a});
+ 
+ 
+     s.insert({xq-a,yq-b});
+     s.insert({xq-a,yq+b});
+     s.insert({xq+a,yq+b});
+     s.insert({xq+a,yq-b});
+ 
+     
+     s.insert({xq-b,yq-a});
+     s.insert({xq-b,yq+a});
+     s.insert({xq+b,yq+a});
+     s.insert({xq+b,yq-a});
+int sol=16-s.size();
+cout<<sol<<endl;
+     }
+     else{
+           s.insert({xk-a,yk-b});
+     s.insert({xk-a,yk+b});
+     s.insert({xk+a,yk+b});
+     s.insert({xk+a,yk-b});
+     
+     s.insert({xq-a,yq-b});
+     s.insert({xq-a,yq+b});
+     s.insert({xq+a,yq+b});
+     s.insert({xq+a,yq-b});
+     int sol=8-s.size();
+cout<<sol<<endl;
+     }
+    }
+}
