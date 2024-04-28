@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+int main() {
+int t;
+cin>>t;
+while(t--){
+    int n,m;
+    cin>>n>>m;
+char a[n][m];
+bool isb1=false, isb2=false, isb3=false, isb4=false,isw1=false, isw2=false, isw3=false, isw4=false;
+for(int i=0;i<n;i++){
+    for(int j=0;j<m;j++){
+cin>>a[i][j];
+    }
+}
+for(int i=0;i<m;i++){
+    if(a[0][i]=='W')
+    isw1=true;
+else if(a[0][i]=='B')
+isb1=true;
+if(isw1==true&&isb1==true)
+break;
+}
+for(int i=0;i<m;i++){
+    if(a[n-1][i]=='W')
+    isw2=true;
+else if(a[n-1][i]=='B')
+isb2=true;
+if(isw2==true&&isb2==true)
+break;
+}
+for(int i=0;i<n;i++){
+    if(a[i][0]=='W')
+    isw3=true;
+else if(a[i][0]=='B')
+isb3=true;
+if(isw3==true&&isb3==true)
+break;
+}
+for(int i=0;i<n;i++){
+    if(a[i][m-1]=='W')
+    isw4=true;
+else if(a[i][m-1]=='B')
+isb4=true;
+if(isw4==true&&isb4==true)
+break;
+}
+if((isb1==true&&isb2==true&&isb3==true&&isb4==true)||(isw1==true&&isw2==true&&isw3==true&&isw4==true))
+cout<<"YES";
+else
+cout<<"NO";
+cout<<endl;
+}
+}
