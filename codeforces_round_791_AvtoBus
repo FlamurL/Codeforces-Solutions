@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+#define ll long long int
+ 
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+        ll n;
+        cin>>n;
+        if(n%2==1)
+        cout<<-1;
+        else
+        {
+            if(n<4)
+            cout<<-1;
+            else{
+         
+                    if(n%6==4){
+                    ll solMax=1+(n-4)/6;
+                    cout<<solMax;
+                }
+                else if(n%6==2){
+                    ll solMax=2+(n-8)/6;
+                    cout<<solMax;
+                }
+                else{
+                    ll solMax=n/6;
+                    cout<<solMax;
+                }
+  
+                cout<<" ";
+                     if(n%4==2){
+                    ll solMin=1+(n-6)/4;
+                    cout<<solMin;
+                }
+                else{
+                    ll solMin=n/4;
+                    cout<<solMin;
+                }
+                
+            }
+        }
+        cout<<endl;
+    }
+}
