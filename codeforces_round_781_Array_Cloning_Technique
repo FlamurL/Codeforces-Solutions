@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+#define f(i,n) for(int i=1;i<n;i++)
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+    int n;
+    cin>>n;
+    int a[n];
+    fr(i,n){ 
+    cin>>a[i];
+    }
+    sort(a,a+n);
+  
+int maksi=0;
+int cnt=1;
+ 
+f(i,n){
+if(a[i]==a[i-1]){ 
+cnt++;
+ 
+}
+if(a[i]!=a[i-1]||i==n-1) { 
+    maksi=max(cnt,maksi);
+ 
+cnt=1;
+}
+ 
+}
+if(n<2||maksi==n){
+    cout<<0<<endl;
+}
+else{ 
+int sol=1;
+bool is=true;
+ 
+while(is){
+   if(maksi<n){
+       
+       sol+=maksi;
+       sol++;
+   
+       maksi=maksi*2;
+ 
+   }
+   else{
+      
+       sol+=n-maksi-1;
+       break;
+   }
+}
+cout<<sol<<endl;
+}
+ 
+    }
+}
