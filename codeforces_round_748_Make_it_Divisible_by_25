@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+int t;
+cin>>t;
+while(t--){
+long long int n;
+cin>>n;
+int dig1=0;
+ vector<int>dig;
+while(n!=0){
+    int u=n%10;
+    n=n/10;
+    dig.push_back(u);
+    dig1++;
+}
+reverse(dig.begin(),dig.end());
+ 
+int ans=20;
+for(int i=0;i<dig1-1;i++){
+    for(int k=i+1;k<dig1;k++){
+        if(dig[i]==2){
+            if(dig[k]==5){
+                int e=dig1-k-1+k-i-1;
+                ans=min(ans,e); 
+            }
+        }
+         if(dig[i]==5){
+            if(dig[k]==0){
+                int e=dig1-k-1+k-i-1;
+                ans=min(ans,e); 
+            }
+        }
+         if(dig[i]==0){
+            if(dig[k]==0){
+               
+                int e=dig1-k-1+k-i-1;
+                ans=min(ans,e); 
+            }
+        }
+         if(dig[i]==7){
+            if(dig[k]==5){
+                int e=dig1-k-1+k-i-1;
+                ans=min(ans,e); 
+            }
+        }
+    }
+}
+cout<<ans<<endl;
+}
+ 
+}
