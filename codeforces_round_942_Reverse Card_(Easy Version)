@@ -1,0 +1,25 @@
+ 
+ #include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(long long int i=1;i<=n;i++)
+
+using namespace std;
+int main() {
+int t;
+cin>>t;
+while(t--){
+ll n,m;
+cin>>n>>m;
+
+ll sol=0;
+fr(i,m){
+    for(long long int j=i;j<=n;j+=i){
+ll katror=i*i;
+ll sum=i+j;
+if(sum%katror==0)
+sol++;
+    }
+}
+cout<<sol<<endl;
+    }
+}
