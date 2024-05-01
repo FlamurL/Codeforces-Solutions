@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+using namespace std;
+int main() {
+int t;
+cin>>t;
+while(t--){
+int n;
+cin>>n;
+ll a[n];
+int zer=0,one=0;
+ll sum=0;
+fr(i,n){
+    cin>>a[i];
+    sum+=a[i];
+    if(a[i]==0)
+    zer++;
+    else if(a[i]==1)
+    one++;
+}
+ll sol=one*pow(2,zer);
+cout<<sol;
+cout<<endl;
+}
+}
