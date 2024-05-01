@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+using namespace std;
+int main() {
+int t;
+cin>>t;
+while(t--){
+    ll n;
+    cin>>n;
+    ll a[n];
+    
+    fr(i,n){
+        cin>>a[i];
+    }
+    ll unique=1;
+    vector<ll>v;
+    v.push_back(a[0]);
+    for(int i=1;i<n;i++){
+        if(a[i]!=a[i-1])
+      {
+          unique++;
+          v.push_back(a[i]);
+      }
+    }
+    if(v.size()>2){ 
+ 
+    for(int i=1;i<v.size()-1;i++){
+        if(v[i]>v[i+1]&&v[i-1]>v[i])
+        unique--;
+        else if(v[i]<v[i+1]&&v[i-1]<v[i])
+        unique--;
+    }
+cout<<unique<<"\n";
+    }
+    else{
+        cout<<unique<<endl;
+    }
+}
+}
