@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+#define f(i,n) for(int i=1;i<n;i++)
+using namespace std;
+int main() {
+int t;
+cin>>t;
+while(t--){
+    int n;
+    cin>>n;
+ll x[n-1];
+ll maksi=0;
+fr(i,n-1){ 
+cin>>x[i];
+maksi=max(maksi,x[i]);
+}
+ll a[n];
+a[0]=maksi+1;
+f(i,n){
+    a[i]=a[i-1]+x[i-1];
+}
+  fr(i,n)  {
+      cout<<a[i]<<" ";
+  }
+  cout<<endl;
+}
+}
