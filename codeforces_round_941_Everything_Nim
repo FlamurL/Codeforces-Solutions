@@ -1,0 +1,103 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+#define pb push_back
+using namespace std;
+void fast()
+{
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    fast();
+    int t;
+    cin>>t;
+    while(t--)
+    {
+      ll n;
+      cin>>n;
+      ll a[n];
+       set<ll>s;
+       bool co=true;
+      bool is1=false;
+      ll cons=1;
+      if(n==1){ 
+      fr(i,n){
+          cin>>a[i];
+      }
+      cout<<"Alice"<<endl;
+      }
+     
+      else if(n==2){
+        fr(i,n){
+          cin>>a[i];
+          s.insert(a[i]);
+          if(a[i]==1)
+          is1=true;
+      }  
+      if(is1==true&&s.size()>1)
+      cout<<"Bob";
+      else cout<<"Alice";
+      cout<<endl;
+      }
+         else if(n>2){
+             
+        fr(i,n){
+          cin>>a[i];
+        
+          if(a[i]==1)
+          is1=true;
+      }  
+      sort(a,a+n);
+          fr(i,n){
+         
+         s.insert(a[i]);
+        
+      }  
+      if(s.size()==1)
+      {
+          cout<<"Alice";
+      }
+      else{ 
+           ll prev = *s.begin();
+  for (auto it = ++s.begin(); it != s.end(); ++it)
+    {
+        if (*it - prev != 1)
+        {
+            co=false;
+           break;
+          
+        }
+         cons++;
+        prev = *it;
+    }
+    
+//cout<<cons;
+     if(cons%2==1&&is1==true){
+         if(co==true) 
+     cout<<"Alice";
+     else if(co==false)
+     cout<<"Bob";
+ 
+     }
+     else if(cons%2==0&&is1==true){ 
+           if(co==true)
+            cout<<"Bob"; 
+    
+    else if(co==false)
+     cout<<"Alice";
+     }
+    
+else 
+cout<<"Alice";
+ 
+      }
+     cout<<endl;
+      }
+ 
+    }
+ 
+  
+}
+ 
