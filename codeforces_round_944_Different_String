@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+#define pb push_back
+using namespace std;
+void fast()
+{
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    fast();
+    int t;
+    cin>>t;
+    while(t--)
+    {
+      string a;
+      cin>>a;
+      bool is=false;
+      if(a.size()==1)
+      cout<<"NO";
+      if(a.size()>1){ 
+      fr(i,a.size()){
+          if(i>0){
+              if(a[i]!=a[0]){
+char tmp =a[i];
+a[i]=a[0];
+a[0]=tmp;
+is=true;
+break;
+              }
+          }
+      }
+      if(is==true){ 
+cout<<"YES";
+cout<<endl;
+cout<<a;
+      }
+      else 
+      cout<<"NO";
+ 
+    }
+    cout<<endl;
+    }
+ 
+  
+}
+ 
