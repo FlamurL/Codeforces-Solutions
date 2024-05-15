@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+   int t;
+   cin>>t;
+   while(t--){
+        long long r;
+    cin >> r;
+    long long h = r;
+    long long ans = 0;
+    for(long long i = 0; i <= r; i++)
+    {
+        while(i*i+h*h >= pow(r+1,2))
+        {
+            h--;
+        }
+        long long c = h;
+        while(i*i+c*c >= r*r && c > 0)
+        {
+            c--;
+            ans++;
+        }
+    }
+    cout << ans*4 << endl;
+   }
+}
