@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int t;
+    cin>>t;
+    while(t--){ 
+long long int l,r;
+cin>>l>>r;
+int cnt=1;
+int x=1;
+bool is=true;
+while(is){
+    l+=x;
+    if(l>r)
+    break;
+    else
+    cnt++;
+    x++;
+}
+cout<<cnt;
+cout<<endl;
+    }
+}
