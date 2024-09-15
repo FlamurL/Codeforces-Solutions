@@ -1,0 +1,97 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define fr(i,n) for(int i=0;i<n;i++)
+#define pb push_back
+using namespace std;
+void fast()
+{
+    cin.tie(0);
+    cout.tie(0);
+}
+int main()
+{
+    fast();
+    int t;
+    cin>>t;
+    while(t--)
+    {
+      long long int n,m,q;
+      cin>>n>>m>>q;
+      long long int b[m];
+      fr(i,m)
+      cin>>b[i];
+      long long int a;
+      cin>>a;
+      bool is=true;
+      bool is1=false;
+      long long int minup=1e9, maxdown=0;
+      fr(i,m){
+          if(b[i]>a)
+          is=false;
+          if(b[i]<a){
+              is1=true;
+              maxdown=max(maxdown,b[i]);
+              
+          }
+          if(b[i]>a){
+              minup=min(minup,b[i]);
+
+          }
+      }
+      if(is1==false){
+     
+      
+          long long int s=minup-1;
+          cout<<s;
+          cout<<endl;
+      }
+      
+      else if(is==true){
+      
+          long long int s=n-maxdown;
+          cout<<s;
+          cout<<endl;
+      }
+      else{
+         if(a==minup-1&&maxdown+1==a){
+             cout<<1<<endl;
+         }
+      
+         else{ 
+          long long int k1=(minup-a)/2;
+          if((minup-a)%2==0)
+          k1--;
+          maxdown+=k1;
+          a+=k1;
+          minup-=k1;
+       
+        long long int k2;
+ 
+         
+           k2=(a-maxdown)/2;
+        
+            if((a-maxdown)%2==0)
+          k2--;
+          
+           if((a-maxdown)%2==1)
+           k2++;
+          
+  a-=k2;
+           minup-=k2;
+           maxdown+=k2;
+        
+           if(a+2==minup&&a-2==maxdown)
+           k2+=2;
+           else if(a-2==maxdown)
+           k2++;
+        
+  
+          cout<<k2+k1<<endl;
+         }
+      }
+ 
+    }
+ 
+  
+}
+ 
